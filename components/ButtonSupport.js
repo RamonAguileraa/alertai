@@ -1,19 +1,22 @@
 "use client";
 
-import { Crisp } from "crisp-sdk-web";
 import config from "@/config";
 
 // Use this button if chat is hidden on some routes. config.js has onlyShowOnRoutes set to ["/"] so it will be hidden on all routes except the home page.
 // If Crisp is not enable, it will open the support email in the default email client.
 const ButtonSupport = () => {
   const handleClick = () => {
-    if (config.crisp?.id) {
-      Crisp.chat.show();
-      Crisp.chat.open();
-    } else if (config.mailgun?.supportEmail) {
+    // TODO: Implementar integración con Crisp cuando esté disponible
+    if (config.mailgun?.supportEmail) {
       // open default email client in new window with "need help with ${config.appName}" as subject
       window.open(
         `mailto:${config.mailgun.supportEmail}?subject=Need help with ${config.appName}`,
+        "_blank"
+      );
+    } else {
+      // Fallback a email de soporte genérico
+      window.open(
+        `mailto:soporte@klarapos.com?subject=Necesito ayuda con ${config.appName}`,
         "_blank"
       );
     }
