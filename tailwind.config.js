@@ -5,11 +5,41 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./styles/globals.css",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#00BFA5', // Verde azulado Klara POS
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#0F172A', // Azul oscuro Klara POS
+        },
+        gray: {
+          50: '#F1F5F9', // Gris claro Klara POS
+          100: '#f1f5f9',
+          200: '#e2e8f0',
+          300: '#cbd5e1',
+          400: '#94a3b8',
+          500: '#64748b',
+          600: '#475569',
+          700: '#334155',
+          800: '#1e293b',
+          900: '#0f172a',
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       backgroundImage: {
         gradient:
-          "linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)",
+          "linear-gradient(60deg, #0F172A, #00BFA5, #F1F5F9, #0F172A, #00BFA5, #F1F5F9, #0F172A, #00BFA5)",
       },
       animation: {
         opacity: "opacity 0.25s ease-in-out",
